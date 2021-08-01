@@ -4,13 +4,6 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-// axios.delete("abc")
-// .then(response => setStatus('Delete successful'))
-// .catch(error => {
-//     setErrorMessage(error.message);
-//     console.error('There was an error!', error);
-// });
-
 const Tables = () => {
     const [userData, setUserData] = useState([])
     const [name, setName] = useState("")
@@ -18,30 +11,11 @@ const Tables = () => {
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [userId, setUserId]=useState(null)
-  
-
-
-    // useEffect(() => {
-    //     const  getUser = async () => {
-    //        try {
-    //          const response = await axios.get('https://60cce86871b73400171f8b70.mockapi.io/admin');
-    //          const tour = response.data
-    //          console.log("response", tour);
-    //          setUserData(tour)
-    //        } catch (error) {
-    //          console.error("error", error);
-    //        }
-    //      }
-    //     getUser()
-    //    }, [])
 
     useEffect(() => {
-
         getList()
-
     }, [])
 
-    
     //GET API
     function getList(){
         fetch('https://60cce86871b73400171f8b70.mockapi.io/admin').then((result)=>{
